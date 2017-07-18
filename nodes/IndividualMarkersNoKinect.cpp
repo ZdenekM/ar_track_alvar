@@ -134,13 +134,13 @@ void getCapCallback (const sensor_msgs::ImageConstPtr & image_msg)
                 }
 
 				//Publish the transform from the camera to the marker
-				std::string markerFrame = "ar_marker_";
+				/*std::string markerFrame = "ar_marker_";
 				std::stringstream out;
 				out << id;
 				std::string id_string = out.str();
 				markerFrame += id_string;
 				tf::StampedTransform camToMarker (t, image_msg->header.stamp, image_msg->header.frame_id, markerFrame.c_str());
-    			tf_broadcaster->sendTransform(camToMarker);
+    			tf_broadcaster->sendTransform(camToMarker);*/
 
 				//Create the rviz visualization messages
 				tf::poseTFToMsg (markerPose, rvizMarker_.pose);

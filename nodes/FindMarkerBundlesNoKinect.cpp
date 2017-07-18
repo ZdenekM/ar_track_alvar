@@ -122,7 +122,7 @@ void makeMarkerMsgs(int type, int id, Pose &p, sensor_msgs::ImageConstPtr image_
   tf::Transform markerPose = t * m;
 
   //Publish the cam to marker transform for main marker in each bundle
-  if(type==MAIN_MARKER){
+  /*if(type==MAIN_MARKER){
     std::string markerFrame = "ar_marker_";
     std::stringstream out;
     out << id;
@@ -130,7 +130,7 @@ void makeMarkerMsgs(int type, int id, Pose &p, sensor_msgs::ImageConstPtr image_
     markerFrame += id_string;
     tf::StampedTransform camToMarker (t, image_msg->header.stamp, image_msg->header.frame_id, markerFrame.c_str());
     tf_broadcaster->sendTransform(camToMarker);
-  }
+  }*/
 
   //Create the rviz visualization message
   tf::poseTFToMsg (markerPose, rvizMarker->pose);
